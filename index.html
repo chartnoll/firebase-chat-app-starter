@@ -2,26 +2,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat App</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/firebaseConfig.js"></script>
     <script src="./scripts/chat-lib.js"></script>
-    <title>FunChat</title>
+<script src="./scripts/usernameInterface.js"></script>
 </head>
 <body>
     <h1>Welcome to Fun Chat!</h1>
-    <form>
-      <input type="text" id="username" placeholder="Type your username">
-      <button type="button" id="submit-username"> Enter </button>
-    </form>
+   <form onsubmit='newUser(); return false'>
+     <input type='text' id='username' placeholder='Type your username'>
+     <button  type=“button” id=“submit-username”> Enter </button>
+     <h2 id= 'listOfUsers'>You are logged in as: </h2>
 
-    <form>
-      <input type="text" id="message" placeholder="Type your message here">
-      <button type="button" id="send"> Send </button>
-    </form>
+   </form>
 
-    <!-- Put your code in the chat.js file -->
-    <script src="./scripts/chat.js"></script>
+   <!-- Put your code in the chat.js file -->
+
+
 </body>
 </html>
