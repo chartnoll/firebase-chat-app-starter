@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/firebaseConfig.js"></script>
     <script src="./scripts/chat-lib.js"></script>
+    <script src="./scripts/message.js"></script>
 </head>
 <body>
     <<h1>Welcome to Fun Chat!</h1>
@@ -15,12 +16,22 @@
      <button type=“button” id=“submit-username”> Enter </button>
    </form>
 
-   <form>
-     <input type=“text” id=“message” placeholder=“Type your message here”>
+   <form  onsubmit=submitMessage();return false;>
+     <input type=“text” id="message" placeholder="Type your message here">
      <button type=“button” id=“send”> Send </button>
    </form>
 
    <!-- Put your code in the chat.js file -->
-   <script src=“./scripts/chat.js”></script>
+   <script>
+       function submitMessage() {
+
+           var hello2345;
+          hello2345 = document.getElementById("message").value;
+          ChatApp.newMessage("user",hello2345)
+          console.log(hello2345);
+          alert(`${hello2345}`);
+      }
+</script>
+
 </body>
 </html>
