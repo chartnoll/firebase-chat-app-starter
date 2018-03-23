@@ -1,9 +1,9 @@
-var name;
+
 function submitMessage() {
 
   //  var message;
    var message = document.getElementById("message").value;
-   name = document.getElementById('username').value;
+   var name = document.getElementById('username').value;
    ChatApp.newMessage(name,message)
    // console.log(message);
 
@@ -16,6 +16,7 @@ function newUser() {
  // console.log(name);
  ChatApp.createOrUpdateUser(name,1);
 
+
 }
 
 // document.getElementById("chatbox").addMessageListener();
@@ -23,6 +24,13 @@ function newUser() {
 ChatApp.addMessageListener(handleMessage)
 
 function handleMessage(changeType, messageId, messageData) {
+  //var newDiv = document.createElement("div");
+  //newDiv.innerHTML=messageData.text+","+messageData.userName;
+  document.getElementById("chatbox").innerText+= `${messageData.userName} , ${messageData.text}\n`;
+  //var newContent = document.createTextNode(messageData.text+","+messageData.userName) ;
   console.log(changeType, messageId, messageData);
-  document.getElementById("chatbox").innerHTML= messageData.text;
+  //newDiv.appendChild(newContent);
+  //document.getElementById("chatbox").innerHTML= messageData.text+","+messageData.userName;
 }
+
+// create a new div element
