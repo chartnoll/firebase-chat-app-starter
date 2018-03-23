@@ -24,9 +24,8 @@ function newUser() {
 ChatApp.addMessageListener(handleMessage)
 
 function handleMessage(changeType, messageId, messageData) {
-  //var newDiv = document.createElement("div");
-  //newDiv.innerHTML=messageData.text+","+messageData.userName;
-  document.getElementById("chatbox").innerText+= `${messageData.userName} , ${messageData.text}\n`;
+   
+  document.getElementById("chatbox").innerText+= `${messageData.userName} : ${messageData.text}\n`;
   //var newContent = document.createTextNode(messageData.text+","+messageData.userName) ;
   console.log(changeType, messageId, messageData);
   //newDiv.appendChild(newContent);
