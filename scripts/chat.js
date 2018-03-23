@@ -15,7 +15,7 @@ function newUser() {
  name = document.getElementById('username').value;
  // console.log(name);
  ChatApp.createOrUpdateUser(name,1);
-
+console.log(name);
 
 }
 
@@ -24,7 +24,7 @@ function newUser() {
 ChatApp.addMessageListener(handleMessage)
 
 function handleMessage(changeType, messageId, messageData) {
-   
+
   document.getElementById("chatbox").innerText+= `${messageData.userName} : ${messageData.text}\n`;
   //var newContent = document.createTextNode(messageData.text+","+messageData.userName) ;
   console.log(changeType, messageId, messageData);
