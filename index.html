@@ -7,20 +7,76 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/firebaseConfig.js"></script>
     <script src="./scripts/chat-lib.js"></script>
+    <script src=“./scripts/chat.js”></script>
 </head>
 <body>
     <<h1>Welcome to Fun Chat!</h1>
-   <form>
-     <input type=“text” id=“username” placeholder=“Type your username”>
-     <button type=“button” id=“submit-username”> Enter </button>
-   </form>
+       <form onsubmit="myFunction(); return false" id="hellohello">
+          Enter name: <input type="text" id="FirstName">
+     </form>
+
+     <ul id="todolist">Top header
+       <li class="todo">Hello planning</li>
+     </ul>
+
+
+     <script>
+       function myFunction() {
+         var inputField = document.getElementById("FirstName");
+         var inputName = inputField.value;
+         console.log(inputName);
+         //var existingItem = document.getElementById("todo");
+         //existingItem.appendChild("inputName");
+
+         //var newDiv = document.createElement("div");
+         var list = document.getElementById("todolist");
+         var newContent = document.createTextNode("You are logged in as: ");
+         list.appendChild(newContent);
+         var newContent = document.createTextNode(inputName);
+         //inputField.appendChild(newContent);
+         list.appendChild(newContent);
+
+         var parentDiv = inputField.parentNode;
+         var sp2 = document.getElementById("FirstName");
+         parentDiv.removeChild(sp2);
+
+         inputField = document.getElementById("hellohello");
+
+         var parentDiv = inputField.parentNode;
+         var sp2 = document.getElementById("hellohello");
+         parentDiv.removeChild(sp2);
+
+
+
+
+
+         //var sp1 = document.createElement("span");
+         //sp1.id = "newSpan";
+         //var sp1_content = document.createTextNode("");
+         //sp1.appendChild(sp1_content);
+
+         //var sp2 = document.getElementById("FirstName");
+         //var parentDiv = sp2.parentNode;
+         //parentDiv.replaceChild(sp1, sp2);
+
+       }
+
+
+
+
+
+
+
+
+     </script>
+
 
    <form>
-     <input type=“text” id=“message” placeholder=“Type your message here”>
+     <input type=“text” id=“message” placeholder='Type your message here'>
      <button type=“button” id=“send”> Send </button>
    </form>
 
-   <!-- Put your code in the chat.js file -->
-   <script src=“./scripts/chat.js”></script>
+   <!-- Put your code in the chat.js file
+   <script src=“./scripts/chat.js”></script> -->
 </body>
 </html>
