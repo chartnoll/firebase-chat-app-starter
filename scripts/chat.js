@@ -11,12 +11,10 @@ function submitMessage() {
 }
 
 function newUser() {
-
  name = document.getElementById('username').value;
  // console.log(name);
  ChatApp.createOrUpdateUser(name,1);
-console.log(name);
-
+ //console.log(name);
 }
 
 // document.getElementById("chatbox").addMessageListener();
@@ -24,12 +22,19 @@ console.log(name);
 ChatApp.addMessageListener(handleMessage)
 
 function handleMessage(changeType, messageId, messageData) {
-
-  document.getElementById("chatbox").innerText+= `${messageData.userName} : ${messageData.text}\n`;
+  document.getElementById("chatbox").innerText+= `${messageData.userName} @ ${getTime()} : ${messageData.text}\n`;
   //var newContent = document.createTextNode(messageData.text+","+messageData.userName) ;
   console.log(changeType, messageId, messageData);
   //newDiv.appendChild(newContent);
   //document.getElementById("chatbox").innerHTML= messageData.text+","+messageData.userName;
 }
 
-// create a new div element
+function getTime() {
+    var date = new Date();
+    var timeInSecs = date.getSeconds();
+    if(timeInSecs < 10) {timeInSecs = `0${timeInSecs}`};
+    var timeInMinutes = date.getMinutes();
+    var timeInHours = date.getHours();
+    var time = `${timeInHours}:${timeInMinutes}:${timeInSecs}`;
+    return time;
+}
