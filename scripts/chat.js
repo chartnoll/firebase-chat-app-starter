@@ -29,24 +29,6 @@ function handleMessage(changeType, messageId, messageData) {
   //document.getElementById("chatbox").innerHTML= messageData.text+","+messageData.userName;
 }
 
-var newData = new Map();
-var set1 = new Set();
-
-function experiment() {
-  console.log("Starting new function");
-  console.log(newData);
-  console.log(set1);
-  set1.add(20);
-  console.log(set1);
-  newData.set("k3", "10");
-  console.log(newData);
-  console.log("Hello!");
-}
-
-experiment();
-
-// create a new div element
-
 function getTime() {
     var date = new Date();
     var timeInSecs = date.getSeconds();
@@ -56,5 +38,3 @@ function getTime() {
     var time = `${timeInHours}:${timeInMinutes}:${timeInSecs}`;
     return time;
 }
-
-console.log(getTime());
